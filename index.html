@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ScrapDish Support</title>
+    <title>ScrapDish</title>
 
     <link rel="stylesheet" href="css/styles.css" />
     <script defer src="js/script.js"></script>
@@ -62,12 +62,19 @@
         send us a message.
       </p>
 
-      <form id="feedbackForm">
-        <input type="text" placeholder="Your Name" required />
+      <form
+        id="feedbackForm"
+        action="https://formsubmit.co/scrapdish25@gmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="ScrapDish Feedback" />
+        <input type="hidden" name="_captcha" value="false" />
 
-        <input type="email" placeholder="Your Email" required />
+        <input type="text" name="name" placeholder="Your Name" required />
 
-        <select required>
+        <input type="email" name="email" placeholder="Your Email" required />
+
+        <select name="topic" required>
           <option value="">What can we help with?</option>
           <option>General Feedback</option>
           <option>Bug Report</option>
@@ -76,6 +83,7 @@
         </select>
 
         <textarea
+          name="message"
           placeholder="Write your message here..."
           rows="5"
           required
